@@ -1,11 +1,14 @@
 package io.github.c2hy.smartstate;
 
-import java.util.Collections;
 import java.util.Objects;
 
 class ArraySmartStates {
+    static byte[] zero32ByteArray() {
+        return new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    }
+
     static byte[] to32ByteArray(int number) {
-        byte[] bytes = new byte[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        byte[] bytes = zero32ByteArray();
         for (int i = 0; i < 32; i++) {
             if (number <= 0) {
                 break;

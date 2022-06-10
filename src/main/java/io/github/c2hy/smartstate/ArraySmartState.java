@@ -10,7 +10,11 @@ class ArraySmartState implements SmartState {
 
     ArraySmartState(Integer number) {
         this.number = number;
-        this.bytes = ArraySmartStates.to32ByteArray(number);
+        if (number == 0) {
+            this.bytes = ArraySmartStates.zero32ByteArray();
+        } else {
+            this.bytes = ArraySmartStates.to32ByteArray(number);
+        }
     }
 
     ArraySmartState(byte[] bytes) {
