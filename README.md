@@ -6,6 +6,16 @@ SmartState 是一个用来运算多个状态位的工具库。它解决的问题
 
 假如我们做这样一个约定，我们有一个 32 位的二进制数字，第一位代表 container 的 enabled，第二位代表 item 的 locked，第三位代表 item 的 activated。如果一个 item 是可用的，那么它的大概是这样一个二进制数字 [...101]，把它转换成十进制的数字就是 5。也就是说我们只需要判断数字是否为 5 就可以知道它是否可用。
 
+首先我们引入该工具库：
+
+```xml
+<dependency>
+    <groupId>io.github.c2hy</groupId>
+    <artifactId>smart-state</artifactId>
+    <version>1.0-beta.0</version>
+</dependency>
+```
+
 接下来我们尝试使用 SmartState 来实现这一方案。假如我们需要新建一个 item，enabled 为 true，locked 为 false，activated 为 false。我们可以使用如下代码获得其状态值：
 
 ```java
